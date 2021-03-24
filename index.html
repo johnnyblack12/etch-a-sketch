@@ -2,13 +2,22 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Template</title>
+    <title>Etch-a-Sketch</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
-    <div class="container"></div>
+    <div class="background">
+        <div class="welcome">
+            <p class="title">Etch-a-Sketch</p>
+            <p>Enter # of boxes per side:</p>
+            <input class="text" type="text" id="squares" name="squareNum" placeholder="max 100">
+            <input class="button" type="submit" value="Go!">
+        </div>
+        <div class="container"></div>
+        <div class="end"></div>
+    </div>    
     <script src="js/main.js"></script>
 </body>
 </html>
