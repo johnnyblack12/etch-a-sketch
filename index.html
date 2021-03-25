@@ -4,6 +4,9 @@
     <meta charset="utf-8" />
     <title>Etch-a-Sketch</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Lobster&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/main.css" />
 </head>
@@ -11,12 +14,16 @@
     <div class="background">
         <div class="welcome">
             <p class="title">Etch-a-Sketch</p>
-            <p>Enter # of boxes per side:</p>
-            <input class="text" type="text" id="squares" name="squareNum" placeholder="max 100">
-            <input class="button" type="submit" value="Go!">
+            <div class="text">
+                <p>Enter # of boxes per side:</p><br>
+                <input class="input" type="text" id="squares" name="squareNum" placeholder="max 100">
+                <input class="button" type="submit" value="Go">
+            </div>
         </div>
         <div class="container"></div>
-        <div class="end"></div>
+        <div class="end">
+            <input class="reset" type="submit" value="Reset">
+        </div>
     </div>    
     <script src="js/main.js"></script>
 </body>
