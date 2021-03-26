@@ -1,18 +1,22 @@
+const container = document.querySelector('.container');
 let clicked = false;
+let pen = false;
+
+function penToggle() {
+    pen = !pen;
+}
+
 function go() {
     if (clicked==false) {
         clicked = true; 
-        const form = document.getElementById("squares");
 
+        const form = document.getElementById('squares');
         const squares = Number(form.value);
-
-        const square = 96/squares;
-
+        const square = 100/squares;
         const sqHeight = String(square) + 'vh';
-
         const area = squares ** 2;
 
-        const container = document.querySelector('.container');
+        container.addEventListener('click', penToggle);
 
         let box;
         let selection;
@@ -22,7 +26,9 @@ function go() {
             box.setAttribute('name', 'box');
             box.addEventListener('mouseover', (e) => {
                 selection = document.getElementById(e.fromElement.id);
-                selection.classList.add('boxHover');
+                if(pen==true) {
+                    selection.classList.add('boxHover');
+                }
             });
             box.style.height = sqHeight;
             box.style.width = sqHeight;
@@ -31,15 +37,18 @@ function go() {
     }
 }
 
-const button = document.querySelector(".button");
+const button = document.querySelector('.button');
 button.addEventListener('click', go);
 
-const reset = document.querySelector(".reset");
+const reset = document.querySelector('.reset');
 reset.addEventListener('click', () => {
-    boxList = document.getElementsByName('box');
-    for (i = 0; i <= boxList.length; i++) {
-        boxList[i].classList.remove('boxHover');
-    }
+    boxList = Array.from(document.getElementsByName('box'));
+    boxList.forEach(box => box.remove());
+
+    pen = false;
+    clicked = false;
+    container.removeEventListener('click', penToggle);
+    document.getElementById('squares').value = null;
 });
 
 
