@@ -26,7 +26,7 @@ div[name='box']:hover {
 .welcome {
     grid-area: 1 / 1 / 2 / 2;
     margin-left: 2vw;
-    border-right: 1vh solid #444;
+    border-right: 1.5vh solid #444;
 }
 
 .title {
@@ -64,7 +64,7 @@ div[name='box']:hover {
 
 .end {
     grid-area: 1 / 3 / 2 / 4;
-    border-left: 1vh solid #444;
+    border-left: 1.5vh solid #444;
 }
 
 .reset {

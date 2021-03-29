@@ -25,7 +25,7 @@ function go() {
             box.setAttribute('id', i);
             box.setAttribute('name', 'box');
             box.addEventListener('mouseover', (e) => {
-                selection = document.getElementById(e.fromElement.id);
+                selection = document.getElementById(e.target.id);
                 if(pen==true) {
                     selection.classList.add('boxHover');
                 }
@@ -42,7 +42,7 @@ button.addEventListener('click', go);
 
 const reset = document.querySelector('.reset');
 reset.addEventListener('click', () => {
-    boxList = Array.from(document.getElementsByName('box'));
+    let boxList = Array.from(document.getElementsByName('box'));
     boxList.forEach(box => box.remove());
 
     pen = false;
